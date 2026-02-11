@@ -1,0 +1,6 @@
+argocd app create my-docker-app \
+  --repo https://github.com/BackstageSSPPoC/k8s-manifests.git \
+  --path . \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace default \
+  --sync-policy automated
