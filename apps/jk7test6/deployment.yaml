@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jk7test6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jk7test6
+  template:
+    metadata:
+      labels:
+        app: jk7test6
+    spec:
+      containers:
+        - name: jk7test6
+          image: chaitanyapandeygspann/jk7test6:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
