@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo4
+  labels:
+    backstage.io/kubernetes-id: argo4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo4
+  template:
+    metadata:
+      labels:
+        app: argo4
+        backstage.io/kubernetes-id: argo4
+    spec:
+      containers:
+        - name: argo4
+          image: chaitanyapandeygspann/argo4:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
