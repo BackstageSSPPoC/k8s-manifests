@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argotest24
+  labels:
+    backstage.io/kubernetes-id: argotest24
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argotest24
+  template:
+    metadata:
+      labels:
+        app: argotest24
+        backstage.io/kubernetes-id: argotest24
+    spec:
+      containers:
+        - name: argotest24
+          image: chaitanyapandeygspann/argotest24:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
