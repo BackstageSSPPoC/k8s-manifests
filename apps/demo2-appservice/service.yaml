@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo2-appservice
+spec:
+  selector:
+    app: demo2-appservice
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: demo2-appservice-ingress
+# spec:
+#   ingressClassName: gce
+#   rules:
+#   - host: demo2-appservice.example.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: demo2-appservice
+#             port:
+#               number: 80
