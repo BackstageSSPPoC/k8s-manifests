@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: backstage-services
-  namespace: argocd
+  namespace: default
 spec:
   generators:
     - git:
@@ -21,8 +21,9 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: argocd
+        namespace: default
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
+
