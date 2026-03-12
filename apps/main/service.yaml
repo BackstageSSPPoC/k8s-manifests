@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: main
+  name: ${APP_NAME}
 spec:
   selector:
-    app: main
+    app: ${APP_NAME}
   ports:
     - protocol: TCP
       port: 80
@@ -15,17 +15,17 @@ spec:
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
 # metadata:
-#   name: main-ingress
+#   name: ${APP_NAME}-ingress
 # spec:
 #   ingressClassName: gce
 #   rules:
-#   - host: main.example.com
+#   - host: ${APP_NAME}.example.com
 #     http:
 #       paths:
 #       - path: /
 #         pathType: Prefix
 #         backend:
 #           service:
-#             name: main
+#             name: ${APP_NAME}
 #             port:
 #               number: 80

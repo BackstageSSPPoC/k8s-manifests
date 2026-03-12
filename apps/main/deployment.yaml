@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: main
+  name: ${APP_NAME}
   labels:
-    backstage.io/kubernetes-id: main
+    backstage.io/kubernetes-id: ${APP_NAME}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: main
+      app: ${APP_NAME}
   template:
     metadata:
       labels:
-        app: main
-        backstage.io/kubernetes-id: main
+        app: ${APP_NAME}
+        backstage.io/kubernetes-id: ${APP_NAME}
     spec:
       containers:
-        - name: main
-          image: chaitanyapandeygspann/main:1.0.1
+        - name: ${APP_NAME}
+          image: ${DOCKER_IMAGE}
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
