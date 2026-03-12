@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: backstage-services
-  namespace: default
+  namespace: argocd
 spec:
   generators:
     - git:
@@ -26,4 +26,5 @@ spec:
         automated:
           prune: true
           selfHeal: true
+
 
