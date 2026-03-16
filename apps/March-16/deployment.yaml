@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: March-16
+  labels:
+    backstage.io/kubernetes-id: March-16
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: March-16
+  template:
+    metadata:
+      labels:
+        app: March-16
+        backstage.io/kubernetes-id: March-16
+    spec:
+      containers:
+        - name: March-16
+          image: ghcr.io/backstagessppoc/march-16:8b02fb472a4425ef8a929267c96b9e154b4dcee6
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000

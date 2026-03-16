@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: March-16
+spec:
+  selector:
+    app: March-16
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: ClusterIP
