@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: march-16-test
-          image: chaitanyapandeygspann/march-16-test:1.0.1
+          image: chaitanyapandeygspann/march-16-test:1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
