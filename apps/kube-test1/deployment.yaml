@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-test1
+  labels:
+    backstage.io/kubernetes-id: kube-test1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-test1
+  template:
+    metadata:
+      labels:
+        app: kube-test1
+        backstage.io/kubernetes-id: kube-test1
+    spec:
+      containers:
+        - name: kube-test1
+          image: chaitanyapandeygspann/kube-test1:1.0.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
