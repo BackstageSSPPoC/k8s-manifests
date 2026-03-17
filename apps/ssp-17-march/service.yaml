@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ssp-17-march
+spec:
+  selector:
+    app: ssp-17-march
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: ssp-17-march-ingress
+# spec:
+#   ingressClassName: gce
+#   rules:
+#   - host: ssp-17-march.example.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: ssp-17-march
+#             port:
+#               number: 80
