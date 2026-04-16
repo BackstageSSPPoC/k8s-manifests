@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dockercompose-testing
-          image: chaitanyapandeygspann/dockercompose-testing:1.0.3
+          image: chaitanyapandeygspann/dockercompose-testing:1.0.4
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
