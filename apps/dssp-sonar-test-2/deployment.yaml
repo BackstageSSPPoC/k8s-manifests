@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dssp-sonar-test-2
-          image: chaitanyapandeygspann/dssp-sonar-test-2:1.0.1
+          image: chaitanyapandeygspann/dssp-sonar-test-2:1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
