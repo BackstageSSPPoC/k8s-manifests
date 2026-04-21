@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gssp-pr-main
+  labels:
+    backstage.io/kubernetes-id: gssp-pr-main
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gssp-pr-main
+  template:
+    metadata:
+      labels:
+        app: gssp-pr-main
+        backstage.io/kubernetes-id: gssp-pr-main
+    spec:
+      containers:
+        - name: gssp-pr-main
+          image: chaitanyapandeygspann/gssp-pr-main:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
