@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssp-march-17
+  labels:
+    backstage.io/kubernetes-id: ssp-march-17
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ssp-march-17
+  template:
+    metadata:
+      labels:
+        app: ssp-march-17
+        backstage.io/kubernetes-id: ssp-march-17
+    spec:
+      containers:
+        - name: ssp-march-17
+          image: chaitanyapandeygspann/ssp-march-17:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
