@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: dssp-test-apr-21-04
   namespace: argocd
+  labels:
+    app.kubernetes.io/name: dssp-test-apr-21-04
 spec:
   project: default
   source:
