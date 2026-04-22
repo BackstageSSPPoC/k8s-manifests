@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dssp-22-apr-test
-          image: chaitanyapandeygspann/dssp-22-apr-test:1.0.4
+          image: chaitanyapandeygspann/dssp-22-apr-test:1.0.5
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
