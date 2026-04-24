@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-sonar-test-14
+  labels:
+    backstage.io/kubernetes-id: dssp-sonar-test-14
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-sonar-test-14
+  template:
+    metadata:
+      labels:
+        app: dssp-sonar-test-14
+        backstage.io/kubernetes-id: dssp-sonar-test-14
+    spec:
+      containers:
+        - name: dssp-sonar-test-14
+          image: chaitanyapandeygspann/dssp-sonar-test-14:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
