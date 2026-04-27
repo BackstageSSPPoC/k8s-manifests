@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: testing-sonar-vault-27-apr
+spec:
+  selector:
+    app: testing-sonar-vault-27-apr
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: testing-sonar-vault-27-apr-ingress
+# spec:
+#   ingressClassName: gce
+#   rules:
+#   - host: testing-sonar-vault-27-apr.example.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: testing-sonar-vault-27-apr
+#             port:
+#               number: 80
