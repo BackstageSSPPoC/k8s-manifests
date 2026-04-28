@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: rebase-28-apr
-          image: chaitanyapandeygspann/rebase-28-apr:1.0.1
+          image: chaitanyapandeygspann/rebase-28-apr:1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
