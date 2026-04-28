@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gssp-28-apr-sonar-vault-test
+  labels:
+    backstage.io/kubernetes-id: gssp-28-apr-sonar-vault-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gssp-28-apr-sonar-vault-test
+  template:
+    metadata:
+      labels:
+        app: gssp-28-apr-sonar-vault-test
+        backstage.io/kubernetes-id: gssp-28-apr-sonar-vault-test
+    spec:
+      containers:
+        - name: gssp-28-apr-sonar-vault-test
+          image: chaitanyapandeygspann/gssp-28-apr-sonar-vault-test:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
