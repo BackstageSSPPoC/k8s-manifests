@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gssp-apr-30-test
+  labels:
+    backstage.io/kubernetes-id: gssp-apr-30-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gssp-apr-30-test
+  template:
+    metadata:
+      labels:
+        app: gssp-apr-30-test
+        backstage.io/kubernetes-id: gssp-apr-30-test
+    spec:
+      containers:
+        - name: gssp-apr-30-test
+          image: chaitanyapandeygspann/gssp-apr-30-test:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
