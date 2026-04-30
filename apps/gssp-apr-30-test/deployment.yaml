@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: gssp-apr-30-test
-          image: chaitanyapandeygspann/gssp-apr-30-test:1.0.1
+          image: chaitanyapandeygspann/gssp-apr-30-test:1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
