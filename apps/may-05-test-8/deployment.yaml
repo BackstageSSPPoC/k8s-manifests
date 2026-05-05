@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: may-05-test-8
-          image: ${DOCKER_IME}
-          imagePullPolicy: Always
+          image: chaitanyapandeygspann/may-05-test-8:1.0.4
+          imagePullPolicy: None
           ports:
             - containerPort: 3000
