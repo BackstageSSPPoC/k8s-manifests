@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: may-05-test-7
-          image: chaitanyapandeygspann/may-05-test-7:1.0.4
+          image: chaitanyapandeygspann/may-05-test-7:1.0.5
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
