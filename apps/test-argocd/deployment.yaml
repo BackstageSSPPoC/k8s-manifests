@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-argocd
+  labels:
+    backstage.io/kubernetes-id: test-argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-argocd
+  template:
+    metadata:
+      labels:
+        app: test-argocd
+        backstage.io/kubernetes-id: test-argocd
+    spec:
+      containers:
+        - name: test-argocd
+          image: chaitanyapandeygspann/test-argocd:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
