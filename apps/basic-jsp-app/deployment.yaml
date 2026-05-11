@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic-jsp-app
+  labels:
+    backstage.io/kubernetes-id: basic-jsp-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basic-jsp-app
+  template:
+    metadata:
+      labels:
+        app: basic-jsp-app
+        backstage.io/kubernetes-id: basic-jsp-app
+    spec:
+      containers:
+        - name: basic-jsp-app
+          image: chaitanyapandeygspann/basic-jsp-app:1.0.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
