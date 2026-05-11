@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: basic-jsp-app
-          image: chaitanyapandeygspann/basic-jsp-app:1.0.5
+          image: chaitanyapandeygspann/basic-jsp-app:1.0.6
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
