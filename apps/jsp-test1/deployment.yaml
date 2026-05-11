@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: jsp-test1
-          image: chaitanyapandeygspann/jsp-test1:1.0.1
+          image: chaitanyapandeygspann/jsp-test1:1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: ${APP_PORTS}
