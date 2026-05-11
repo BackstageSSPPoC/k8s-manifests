@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: java-test-1
-          image: chaitanyapandeygspann/java-test-1:1.0.7
+          image: chaitanyapandeygspann/java-test-1:1.0.9
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
