@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dssp-python
-          image: chaitanyapandeygspann/dssp-python:1.0.6
+          image: chaitanyapandeygspann/dssp-python:1.0.7
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
