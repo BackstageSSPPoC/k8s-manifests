@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dssp-jsp-test3
-          image: chaitanyapandeygspann/dssp-jsp-test3:1.0.5
+          image: chaitanyapandeygspann/dssp-jsp-test3:1.0.6
           imagePullPolicy: Always
           ports:
-            - containerPort: ${APP_POR}
+            - containerPort: 8080
