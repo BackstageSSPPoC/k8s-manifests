@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-test
+  labels:
+    backstage.io/kubernetes-id: ingress-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ingress-test
+  template:
+    metadata:
+      labels:
+        app: ingress-test
+        backstage.io/kubernetes-id: ingress-test
+    spec:
+      containers:
+        - name: ingress-test
+          image: chaitanyapandeygspann/ingress-test:1.0.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
