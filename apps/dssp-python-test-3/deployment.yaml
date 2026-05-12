@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-python-test-3
+  labels:
+    backstage.io/kubernetes-id: dssp-python-test-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-python-test-3
+  template:
+    metadata:
+      labels:
+        app: dssp-python-test-3
+        backstage.io/kubernetes-id: dssp-python-test-3
+    spec:
+      containers:
+        - name: dssp-python-test-3
+          image: chaitanyapandeygspann/dssp-python-test-3:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
