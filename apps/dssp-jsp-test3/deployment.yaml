@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-jsp-test3
+  labels:
+    backstage.io/kubernetes-id: dssp-jsp-test3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-jsp-test3
+  template:
+    metadata:
+      labels:
+        app: dssp-jsp-test3
+        backstage.io/kubernetes-id: dssp-jsp-test3
+    spec:
+      containers:
+        - name: dssp-jsp-test3
+          image: chaitanyapandeygspann/dssp-jsp-test3:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
