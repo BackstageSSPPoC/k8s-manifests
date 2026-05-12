@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-python
+  labels:
+    backstage.io/kubernetes-id: dssp-python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-python
+  template:
+    metadata:
+      labels:
+        app: dssp-python
+        backstage.io/kubernetes-id: dssp-python
+    spec:
+      containers:
+        - name: dssp-python
+          image: chaitanyapandeygspann/dssp-python:1.0.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: ${APP_PORTS}
