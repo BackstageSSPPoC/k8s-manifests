@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: jsp-testing-2
-          image: chaitanyapandeygspann/jsp-testing-2:1.0.2
+          image: chaitanyapandeygspann/jsp-testing-2:1.0.3
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
