@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dssp-jsp-test-2
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2   
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /dssp-jsp-test-2(/|$)(.*)               
+            pathType: Prefix        
+            backend:
+              service:
+                name: dssp-jsp-test-2
+                port:
+                  number: 80
