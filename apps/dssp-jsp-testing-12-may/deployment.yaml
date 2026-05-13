@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dssp-jsp-testing-12-may
-          image: chaitanyapandeygspann/dssp-jsp-testing-12-may:1.0.2
+          image: chaitanyapandeygspann/dssp-jsp-testing-12-may:1.0.3
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
