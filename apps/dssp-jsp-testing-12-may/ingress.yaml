@@ -16,3 +16,4 @@ spec:
                 name: dssp-jsp-testing-12-may
                 port:
                   number: 80
+                targetPort: 8080
