@@ -5,12 +5,13 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2   
 spec:
   rules:
     - http:
         paths:
-          - path: /dssp-python-test-7
-            pathType: Prefix
+          - path: /dssp-python-test-7(/|$)(.*)               
+            pathType: Prefix        
             backend:
               service:
                 name: dssp-python-test-7
