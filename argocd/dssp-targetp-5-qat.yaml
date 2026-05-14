@@ -24,7 +24,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: dssp-targetp-5-qat
-  namespace: argocd
+  namespace: 
+  labels:
+    app.kubernetes.io/name: dssp-targetp-5
 spec:
   project: default
   source:
