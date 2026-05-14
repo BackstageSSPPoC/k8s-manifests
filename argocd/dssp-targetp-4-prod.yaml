@@ -25,6 +25,8 @@ kind: Application
 metadata:
   name: dssp-targetp-4-prod
   namespace: argocd
+  labels:
+    app.kubernetes.io/instance: dssp-targetp-4
 spec:
   project: default
   source:
