@@ -43,6 +43,7 @@ spec:
   source:
     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
     targetRevision: main
+    path: argocd
     path: apps
     directory:
       recurse: true
