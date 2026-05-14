@@ -26,7 +26,7 @@ metadata:
   name: dssp-targetp-6-dev
   namespace: argocd
   labels:
-    app.kubernetes.io/name: dssp-targetp-6
+    app.kubernetes.io/instance: dssp-targetp-6
 spec:
   project: default
   source:
