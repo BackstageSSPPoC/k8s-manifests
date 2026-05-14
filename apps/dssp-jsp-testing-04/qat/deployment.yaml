@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${APP_NAME}
-  namespace: ${NAMESPACE}
+  name: dssp-jsp-testing-04
+  namespace: qat
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ${APP_NAME}
+      app: dssp-jsp-testing-04
   template:
     metadata:
       labels:
-        app: ${APP_NAME}
-        backstage.io/kubernetes-id: ${APP_NAME}
-        environment: ${NAMESPACE}
+        app: dssp-jsp-testing-04
+        backstage.io/kubernetes-id: dssp-jsp-testing-04
+        environment: qat
     spec:
       containers:
-        - name: ${APP_NAME}
-          image: ${DOCKER_IMAGE}
+        - name: dssp-jsp-testing-04
+          image: chaitanyapandeygspann/dssp-jsp-testing-04:1.0.2
           ports:
-            - containerPort: ${APP_PORT}
+            - containerPort: 8080
           env:
             - name: APP_ENV
-              value: "${NAMESPACE}"
+              value: "qat"

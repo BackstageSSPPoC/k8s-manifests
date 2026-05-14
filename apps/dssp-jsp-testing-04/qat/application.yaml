@@ -1,16 +1,16 @@
 # apiVersion: argoproj.io/v1alpha1
 # kind: Application
 # metadata:
-#   name: ${APP_NAME}
+#   name: dssp-jsp-testing-04
 #   namespace: argocd
 #   labels:
-#     app.kubernetes.io/name: ${APP_NAME}
+#     app.kubernetes.io/name: dssp-jsp-testing-04
 # spec:
 #   project: default
 #   source:
 #     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
 #     targetRevision: main
-#     path: apps/${APP_NAME}
+#     path: apps/dssp-jsp-testing-04
 #   destination:
 #     server: https://kubernetes.default.svc
 #     namespace: default
@@ -23,17 +23,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ${APP_NAME}-${NAMESPACE}
+  name: dssp-jsp-testing-04-qat
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
     targetRevision: main
-    path: apps/${APP_NAME}/${NAMESPACE}
+    path: apps/dssp-jsp-testing-04/qat
   destination:
     server: https://kubernetes.default.svc
-    namespace: ${NAMESPACE}
+    namespace: qat
   syncPolicy:
     automated:
       prune: true
