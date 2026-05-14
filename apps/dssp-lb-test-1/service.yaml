@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dssp-lb-test-1
+spec:
+  selector:
+    app: dssp-lb-test-1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
+    
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: dssp-lb-test-1-ingress
+# spec:
+#   ingressClassName: gce
+#   rules:
+#   - host: dssp-lb-test-1.example.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: dssp-lb-test-1
+#             port:
+#               number: 80
