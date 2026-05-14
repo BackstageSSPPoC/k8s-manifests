@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dssp-targetp-3
+  namespace: prod
+  labels:
+    backstage.io/kubernetes-id: dssp-targetp-3
+    environment: prod
+spec:
+  selector:
+    app: dssp-targetp-3
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
+ 
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: dssp-targetp-3-ingress
+# spec:
+#   ingressClassName: gce
+#   rules:
+#   - host: dssp-targetp-3.example.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: dssp-targetp-3
+#             port:
+#               number: 80
