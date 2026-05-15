@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dssp-targetnode-2
+  namespace: qat
+  labels:
+    backstage.io/kubernetes-id: dssp-targetnode-2
+    environment: qat
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx  
+  rules:
+    - http:
+        paths:
+          - path: /dssp-targetnode-2-qat(/|$)(.*) 
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: dssp-targetnode-2
+                port:
+                  number: 80
