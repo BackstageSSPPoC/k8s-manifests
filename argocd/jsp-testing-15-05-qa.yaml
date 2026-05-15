@@ -1,0 +1,40 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: jsp-testing-15-05
+#   namespace: argocd
+#   labels:
+#     app.kubernetes.io/name: jsp-testing-15-05
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+#     targetRevision: main
+#     path: apps/jsp-testing-15-05
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: default
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jsp-testing-15-05-qa
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+    targetRevision: main
+    path: apps/jsp-testing-15-05/qa
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: qa
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
