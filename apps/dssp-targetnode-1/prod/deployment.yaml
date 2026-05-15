@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-targetnode-1
+  namespace: prod
+  labels:
+    app: dssp-targetnode-1
+    backstage.io/kubernetes-id: dssp-targetnode-1
+    environment: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-targetnode-1
+  template:
+    metadata:
+      labels:
+        app: dssp-targetnode-1
+        backstage.io/kubernetes-id: dssp-targetnode-1
+        environment: prod
+    spec:
+      containers:
+        - name: dssp-targetnode-1
+          image: chaitanyapandeygspann/dssp-targetnode-1:1.0.6
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_ENV
+              value: "prod"
