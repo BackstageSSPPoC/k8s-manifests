@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-12
-          image: chaitanyapandeygspann/dssp-targetp-12:1.0.7
+          image: chaitanyapandeygspann/dssp-targetp-12:1.0.8
           ports:
             - containerPort: 5000
           env:
