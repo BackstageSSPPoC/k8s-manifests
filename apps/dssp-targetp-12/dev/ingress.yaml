@@ -1,11 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ${APP_NAME}
-  namespace: ${NAMESPACE}
+  name: dssp-targetp-12
+  namespace: dev
   labels:
-    backstage.io/kubernetes-id: ${APP_NAME}
-    environment: ${NAMESPACE}
+    backstage.io/kubernetes-id: dssp-targetp-12
+    environment: dev
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$2
@@ -15,10 +15,10 @@ spec:
   rules:
     - http:
         paths:
-          - path: /${APP_NAME}-${NAMESPACE}(/|$)(.*)
+          - path: /dssp-targetp-12-dev(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
-                name: ${APP_NAME}
+                name: dssp-targetp-12
                 port:
                   number: 80

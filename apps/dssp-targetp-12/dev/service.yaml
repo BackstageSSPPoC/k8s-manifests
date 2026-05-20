@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ${APP_NAME}
-  namespace: ${NAMESPACE}
+  name: dssp-targetp-12
+  namespace: dev
   labels:
-    backstage.io/kubernetes-id: ${APP_NAME}
-    environment: ${NAMESPACE}
+    backstage.io/kubernetes-id: dssp-targetp-12
+    environment: dev
 spec:
   selector:
-    app: ${APP_NAME}
+    app: dssp-targetp-12
   ports:
     - protocol: TCP
       port: 80
-      targetPort: ${APP_PORT}
+      targetPort: 8000
   type: ClusterIP

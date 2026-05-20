@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${APP_NAME}
-  namespace: ${NAMESPACE}
+  name: dssp-targetp-12
+  namespace: dev
   labels:
-    app: ${APP_NAME}
-    backstage.io/kubernetes-id: ${APP_NAME}
-    environment: ${NAMESPACE}
+    app: dssp-targetp-12
+    backstage.io/kubernetes-id: dssp-targetp-12
+    environment: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ${APP_NAME}
+      app: dssp-targetp-12
   template:
     metadata:
       labels:
-        app: ${APP_NAME}
-        backstage.io/kubernetes-id: ${APP_NAME}
-        environment: ${NAMESPACE}
+        app: dssp-targetp-12
+        backstage.io/kubernetes-id: dssp-targetp-12
+        environment: dev
     spec:
       containers:
-        - name: ${APP_NAME}
-          image: ${DOCKER_IMAGE}
+        - name: dssp-targetp-12
+          image: chaitanyapandeygspann/dssp-targetp-12:1.0.5
           ports:
-            - containerPort: ${APP_PORT}
+            - containerPort: 8000
           env:
             - name: APP_ENV
-              value: "${NAMESPACE}"
+              value: "dev"
