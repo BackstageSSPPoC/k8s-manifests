@@ -1,0 +1,40 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: dssp-21-may-02
+#   namespace: argocd
+#   labels:
+#     app.kubernetes.io/name: dssp-21-may-02
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+#     targetRevision: main
+#     path: apps/dssp-21-may-02
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: default
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dssp-21-may-02-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+    targetRevision: main
+    path: apps/dssp-21-may-02/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
