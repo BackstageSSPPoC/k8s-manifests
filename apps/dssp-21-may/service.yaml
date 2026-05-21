@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dssp-21-may
+spec:
+  selector:
+    app: dssp-21-may
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
+    
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: dssp-21-may-ingress
+# spec:
+#   ingressClassName: gce
+#   rules:
+#   - host: dssp-21-may.example.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: dssp-21-may
+#             port:
+#               number: 80

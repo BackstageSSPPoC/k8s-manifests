@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-21-may
+  labels:
+    backstage.io/kubernetes-id: dssp-21-may
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-21-may
+  template:
+    metadata:
+      labels:
+        app: dssp-21-may
+        backstage.io/kubernetes-id: dssp-21-may
+    spec:
+      containers:
+        - name: dssp-21-may
+          image: chaitanyapandeygspann/dssp-21-may:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
