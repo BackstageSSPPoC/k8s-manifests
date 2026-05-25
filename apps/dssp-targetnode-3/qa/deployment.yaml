@@ -21,7 +21,7 @@
 #     spec:
 #       containers:
 #         - name: dssp-targetnode-3
-#           image: chaitanyapandeygspann/dssp-targetnode-3:1.0.2
+#           image: chaitanyapandeygspann/dssp-targetnode-3:1.0.3
 #           ports:
 #             - containerPort: 3000
 #           env:
@@ -56,18 +56,18 @@ spec:
     spec:
       containers:
         - name: dssp-targetnode-3
-          image: chaitanyapandeygspann/dssp-targetnode-3:1.0.2
+          image: chaitanyapandeygspann/dssp-targetnode-3:1.0.3
           ports:
             - containerPort: 3000
           env:
             - name: APP_ENV
               value: "qa"
           resources:
-            requests:
-              memory: "64Mi"
-              cpu: "10m"
-              ephemeral-storage: "50Mi"
-            limits:
-              memory: "128Mi"
-              cpu: "100m"
-              ephemeral-storage: "100Mi"
+           requests:
+            memory: "64Mi"
+            cpu: "50m"
+            ephemeral-storage: "50Mi"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+            ephemeral-storage: "100Mi"
