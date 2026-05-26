@@ -21,7 +21,7 @@
 #     spec:
 #       containers:
 #         - name: dssp-targetp-18
-#           image: chaitanyapandeygspann/dssp-targetp-18:1.0.4
+#           image: chaitanyapandeygspann/dssp-targetp-18:1.0.5
 #           ports:
 #             - containerPort: 5000
 #           env:
@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-18
-          image: chaitanyapandeygspann/dssp-targetp-18:1.0.4
+          image: chaitanyapandeygspann/dssp-targetp-18:1.0.5
           ports:
             - containerPort: 5000
           env:
