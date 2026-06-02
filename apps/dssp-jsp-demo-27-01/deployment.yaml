@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-jsp-demo-27-01
+  labels:
+    backstage.io/kubernetes-id: dssp-jsp-demo-27-01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-jsp-demo-27-01
+  template:
+    metadata:
+      labels:
+        app: dssp-jsp-demo-27-01
+        backstage.io/kubernetes-id: dssp-jsp-demo-27-01
+    spec:
+      containers:
+        - name: dssp-jsp-demo-27-01
+          image: chaitanyapandeygspann/dssp-jsp-demo-27-01:1.0.4
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

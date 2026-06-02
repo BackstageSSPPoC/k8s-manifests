@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dssp-jsp-demo-27-01
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: dssp-jsp-demo-27-01
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+    targetRevision: main
+    path: apps/dssp-jsp-demo-27-01
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  ignoreDifferences:
+  - group: argoproj.io
+    kind: Application
+    jsonPointers:
+    - /metadata/annotations/argocd.argoproj.io~1tracking-id
+    ignoreDifferences:
+  - group: argoproj.io
+    kind: Application
+    jsonPointers:
+    - /metadata/annotations/argocd.argoproj.io~1tracking-id  
