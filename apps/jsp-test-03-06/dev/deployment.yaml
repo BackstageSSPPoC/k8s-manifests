@@ -21,7 +21,7 @@
 #     spec:
 #       containers:
 #         - name: jsp-test-03-06
-#           image: chaitanyapandeygspann/jsp-test-03-06:1.0.5
+#           image: chaitanyapandeygspann/jsp-test-03-06:1.0.6
 #           ports:
 #             - containerPort: 8080
 #           env:
