@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: centralized-sonar-vault-test-28-apr-01
+  labels:
+    backstage.io/kubernetes-id: centralized-sonar-vault-test-28-apr-01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: centralized-sonar-vault-test-28-apr-01
+  template:
+    metadata:
+      labels:
+        app: centralized-sonar-vault-test-28-apr-01
+        backstage.io/kubernetes-id: centralized-sonar-vault-test-28-apr-01
+    spec:
+      containers:
+        - name: centralized-sonar-vault-test-28-apr-01
+          image: chaitanyapandeygspann/centralized-sonar-vault-test-28-apr-01:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
