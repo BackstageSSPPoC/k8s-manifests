@@ -1,0 +1,62 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: dssp-targetp-23
+#   namespace: argocd
+#   labels:
+#     app.kubernetes.io/name: dssp-targetp-23
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+#     targetRevision: main
+#     path: apps/dssp-targetp-23
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: default
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+
+
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: dssp-targetp-23-prod
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+#     targetRevision: main
+#     path: apps/dssp-targetp-23/prod
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: prod
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dssp-targetp-23-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+    targetRevision: main
+    path: apps/dssp-targetp-23/prod
+  destination:
+    server: https://kubernetes.default.svc    
+    namespace: prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true           
