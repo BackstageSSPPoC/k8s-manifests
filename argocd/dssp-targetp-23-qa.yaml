@@ -52,7 +52,7 @@ spec:
     targetRevision: main
     path: apps/dssp-targetp-23/qa
   destination:
-    server: https://34.68.42.64    
+    server: https://35.193.115.51    
     namespace: qa
   syncPolicy:
     automated:
