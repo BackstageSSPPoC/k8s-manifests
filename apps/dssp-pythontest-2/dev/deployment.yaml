@@ -21,7 +21,7 @@
 #     spec:
 #       containers:
 #         - name: dssp-pythontest-2
-#           image: chaitanyapandeygspann/dssp-pythontest-2:1.0.5
+#           image: chaitanyapandeygspann/dssp-pythontest-2:1.0.6
 #           ports:
 #             - containerPort: 5000
 #           env:
@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
         - name: dssp-pythontest-2
-          image: chaitanyapandeygspann/dssp-pythontest-2:1.0.5
+          image: ${DOCKER_I}
           ports:
             - containerPort: 5000
           env:
