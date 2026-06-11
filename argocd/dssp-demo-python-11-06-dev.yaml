@@ -1,0 +1,62 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: dssp-demo-python-11-06
+#   namespace: argocd
+#   labels:
+#     app.kubernetes.io/name: dssp-demo-python-11-06
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+#     targetRevision: main
+#     path: apps/dssp-demo-python-11-06
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: default
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+
+
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: dssp-demo-python-11-06-dev
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+#     targetRevision: main
+#     path: apps/dssp-demo-python-11-06/dev
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: dev
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dssp-demo-python-11-06-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+    targetRevision: main
+    path: apps/dssp-demo-python-11-06/dev
+  destination:
+    server: https://34.61.146.167    
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true           
