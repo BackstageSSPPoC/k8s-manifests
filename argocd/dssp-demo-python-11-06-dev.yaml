@@ -52,7 +52,7 @@ spec:
     targetRevision: main
     path: apps/dssp-demo-python-11-06/dev
   destination:
-    server: https://34.61.146.167    
+    server: https://kubernetes.default.svc    
     namespace: dev
   syncPolicy:
     automated:
