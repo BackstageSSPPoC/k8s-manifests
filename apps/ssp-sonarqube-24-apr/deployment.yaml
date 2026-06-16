@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssp-sonarqube-24-apr
+  labels:
+    backstage.io/kubernetes-id: ssp-sonarqube-24-apr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ssp-sonarqube-24-apr
+  template:
+    metadata:
+      labels:
+        app: ssp-sonarqube-24-apr
+        backstage.io/kubernetes-id: ssp-sonarqube-24-apr
+    spec:
+      containers:
+        - name: ssp-sonarqube-24-apr
+          image: chaitanyapandeygspann/ssp-sonarqube-24-apr:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
