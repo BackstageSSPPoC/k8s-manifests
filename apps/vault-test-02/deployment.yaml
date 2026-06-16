@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-test-02
+  labels:
+    backstage.io/kubernetes-id: vault-test-02
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vault-test-02
+  template:
+    metadata:
+      labels:
+        app: vault-test-02
+        backstage.io/kubernetes-id: vault-test-02
+    spec:
+      containers:
+        - name: vault-test-02
+          image: chaitanyapandeygspann/vault-test-02:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
