@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-sonar-check
+  labels:
+    backstage.io/kubernetes-id: dssp-sonar-check
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-sonar-check
+  template:
+    metadata:
+      labels:
+        app: dssp-sonar-check
+        backstage.io/kubernetes-id: dssp-sonar-check
+    spec:
+      containers:
+        - name: dssp-sonar-check
+          image: chaitanyapandeygspann/dssp-sonar-check:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
