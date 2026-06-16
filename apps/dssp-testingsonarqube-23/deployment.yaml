@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-testingsonarqube-23
+  labels:
+    backstage.io/kubernetes-id: dssp-testingsonarqube-23
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-testingsonarqube-23
+  template:
+    metadata:
+      labels:
+        app: dssp-testingsonarqube-23
+        backstage.io/kubernetes-id: dssp-testingsonarqube-23
+    spec:
+      containers:
+        - name: dssp-testingsonarqube-23
+          image: chaitanyapandeygspann/dssp-testingsonarqube-23:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
