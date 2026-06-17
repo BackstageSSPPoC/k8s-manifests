@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerized-gssp-01
+  labels:
+    backstage.io/kubernetes-id: dockerized-gssp-01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dockerized-gssp-01
+  template:
+    metadata:
+      labels:
+        app: dockerized-gssp-01
+        backstage.io/kubernetes-id: dockerized-gssp-01
+    spec:
+      containers:
+        - name: dockerized-gssp-01
+          image: chaitanyapandeygspann/dockerized-gssp-01:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
