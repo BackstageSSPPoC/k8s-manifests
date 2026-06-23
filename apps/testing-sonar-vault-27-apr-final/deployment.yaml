@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testing-sonar-vault-27-apr-final
+  labels:
+    backstage.io/kubernetes-id: testing-sonar-vault-27-apr-final
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testing-sonar-vault-27-apr-final
+  template:
+    metadata:
+      labels:
+        app: testing-sonar-vault-27-apr-final
+        backstage.io/kubernetes-id: testing-sonar-vault-27-apr-final
+    spec:
+      containers:
+        - name: testing-sonar-vault-27-apr-final
+          image: chaitanyapandeygspann/testing-sonar-vault-27-apr-final:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
