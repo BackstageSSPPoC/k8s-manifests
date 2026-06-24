@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dssp-targetp-29
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: dssp-targetp-29
+    environment: dev
+spec:
+  selector:
+    app: dssp-targetp-29
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
+ 
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: dssp-targetp-29-ingress
+# spec:
+#   ingressClassName: gce
+#   rules:
+#   - host: dssp-targetp-29.example.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: dssp-targetp-29
+#             port:
+#               number: 80
