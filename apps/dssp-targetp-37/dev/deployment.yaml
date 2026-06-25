@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-37
-          image: ${DOCKER_IMGE}
+          image: xyz:1
           ports:
             - containerPort: 5000
           env:
