@@ -15,7 +15,7 @@ spec:
   rules:
     - http:
         paths:
-          # - path: /dssp-targetp-35-dev(/|$)(.*)
+          - path: /${APP_NME}-dev(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
