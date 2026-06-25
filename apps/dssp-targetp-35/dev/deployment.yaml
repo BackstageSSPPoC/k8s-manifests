@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-35
-          image: ${DOCKER_IAGE}
+          image: chaitanyapandeygspann/dssp-targetp-35:1.0.22
           ports:
             - containerPort: 5000
           env:
