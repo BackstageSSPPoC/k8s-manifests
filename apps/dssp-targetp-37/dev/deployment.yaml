@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-37
-          image: chaitanyapandeygspann/dssp-targetp-37:1.0.3
+          image: ${DOCKER_IME}
           ports:
             - containerPort: 5000
           env:
