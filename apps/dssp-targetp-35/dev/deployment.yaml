@@ -21,9 +21,9 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-35
-          image: ${DOCKER_IMGE}
+          image: chaitanyapandeygspann/dssp-targetp-35:1.0.17
           ports:
-            - containerPort: ${APP_P}
+            - containerPort: 5000
           env:
             - name: APP_ENV
               value: "dev"
