@@ -8,7 +8,7 @@ metadata:
     backstage.io/kubernetes-id: dssp-targetp-38
     environment: dev
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: dssp-targetp-38
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-38
-          image: chaitanyapandeygspann/dssp-targetp-38:1.0.6
+          image: chaitanyapandeygspann/dssp-targetp-38:1.0.7
           ports:
             - containerPort: 5000
           env:
