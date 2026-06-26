@@ -11,19 +11,19 @@ spec:
   replicas: 0
   selector:
     matchLabels:
-      app: dssp-targetp-37
+      app: ${APP_NAE}
   template:
     metadata:
       labels:
-        app: dssp-targetp-37
+        app: ${APP_NAE}
         backstage.io/kubernetes-id: dssp-targetp-37
         environment: dev
     spec:
       containers:
         - name: dssp-targetp-37
-          image: ${DOCKER_IMGE}
+          image: chaitanyapandeygspann/dssp-targetp-37:1.0.12
           ports:
-            - containerPort: 5000
+            - containerPort: ${APP_POT}
           env:
             - name: APP_ENV
               value: "dev"
