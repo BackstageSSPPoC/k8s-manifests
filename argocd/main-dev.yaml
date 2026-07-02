@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: main-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+    targetRevision: main
+    path: apps/main/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
