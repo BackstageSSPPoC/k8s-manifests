@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-48
-          image: chaitanyapandeygspann/dssp-targetp-48:1.0.3
+          image: chaitanyapandeygspann/dssp-targetp-48:1.0.5
           ports:
             - containerPort: 5000
           env:
