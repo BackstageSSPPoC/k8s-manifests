@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: testing-06-07-1
-          image: chaitanyapandeygspann/testing-06-07-1:1.0.2
+          image: chaitanyapandeygspann/testing-06-07-1:1.0.4
           ports:
             - containerPort: 8080
           env:
