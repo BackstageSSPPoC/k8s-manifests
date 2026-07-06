@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-targetp-52
+  namespace: dev
+  labels:
+    app: dssp-targetp-52
+    backstage.io/kubernetes-id: dssp-targetp-52
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-targetp-52
+  template:
+    metadata:
+      labels:
+        app: dssp-targetp-52
+        backstage.io/kubernetes-id: dssp-targetp-52
+        environment: dev
+    spec:
+      containers:
+        - name: dssp-targetp-52
+          image: chaitanyapandeygspann/dssp-targetp-52:1.0.1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "dev"
