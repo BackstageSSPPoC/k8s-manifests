@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testing-06-07
+  namespace: dev
+  labels:
+    app: testing-06-07
+    backstage.io/kubernetes-id: testing-06-07
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testing-06-07
+  template:
+    metadata:
+      labels:
+        app: testing-06-07
+        backstage.io/kubernetes-id: testing-06-07
+        environment: dev
+    spec:
+      containers:
+        - name: testing-06-07
+          image: chaitanyapandeygspann/testing-06-07:1.0.3
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
