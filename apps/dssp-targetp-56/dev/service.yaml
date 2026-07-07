@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dssp-targetp-56
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: dssp-targetp-56
+spec:
+  selector:
+    app: dssp-targetp-56
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
