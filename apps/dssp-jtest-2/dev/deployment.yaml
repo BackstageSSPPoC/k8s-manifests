@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-jtest-2
-          image: chaitanyapandeygspann/dssp-jtest-2:1.0.1
+          image: chaitanyapandeygspann/dssp-jtest-2:1.0.3
           ports:
             - containerPort: 8080
           env:
