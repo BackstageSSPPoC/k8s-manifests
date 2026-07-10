@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo13
+  labels:
+    backstage.io/kubernetes-id: argo13
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo13
+  template:
+    metadata:
+      labels:
+        app: argo13
+        backstage.io/kubernetes-id: argo13
+    spec:
+      containers:
+        - name: argo13
+          image: chaitanyapandeygspann/argo13:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
