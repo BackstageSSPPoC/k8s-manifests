@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-targetp-5
+  namespace: qat
+  labels:
+    app: dssp-targetp-5
+    backstage.io/kubernetes-id: dssp-targetp-5
+    environment: qat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-targetp-5
+  template:
+    metadata:
+      labels:
+        app: dssp-targetp-5
+        backstage.io/kubernetes-id: dssp-targetp-5
+        environment: qat
+    spec:
+      containers:
+        - name: dssp-targetp-5
+          image: chaitanyapandeygspann/dssp-targetp-5:1.0.1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "qat"
