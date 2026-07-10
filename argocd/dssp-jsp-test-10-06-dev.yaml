@@ -52,7 +52,7 @@ spec:
     targetRevision: main
     path: apps/dssp-jsp-test-10-06/dev
   destination:
-    server: https://34.170.186.218    
+    server: https://kubernetes.default.svc    
     namespace: dev
   syncPolicy:
     automated:
