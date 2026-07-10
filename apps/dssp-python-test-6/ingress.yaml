@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dssp-python-test-6
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /dssp-python-test-6
+            pathType: Prefix
+            backend:
+              service:
+                name: dssp-python-test-6
+                port:
+                  number: 80
