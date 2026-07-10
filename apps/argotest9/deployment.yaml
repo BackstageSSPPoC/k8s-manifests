@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argotest9
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argotest9
+  template:
+    metadata:
+      labels:
+        app: argotest9
+    spec:
+      containers:
+        - name: argotest9
+          image: chaitanyapandeygspann/argotest9:1.0.${BUILD_NUMBER}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
