@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dgssp-test-docker-compose
+  labels:
+    backstage.io/kubernetes-id: dgssp-test-docker-compose
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dgssp-test-docker-compose
+  template:
+    metadata:
+      labels:
+        app: dgssp-test-docker-compose
+        backstage.io/kubernetes-id: dgssp-test-docker-compose
+    spec:
+      containers:
+        - name: dgssp-test-docker-compose
+          image: chaitanyapandeygspann/dgssp-test-docker-compose:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
