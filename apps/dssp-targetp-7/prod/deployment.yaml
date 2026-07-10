@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-targetp-7
+  namespace: prod
+  labels:
+    app: dssp-targetp-7
+    backstage.io/kubernetes-id: dssp-targetp-7
+    environment: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-targetp-7
+  template:
+    metadata:
+      labels:
+        app: dssp-targetp-7
+        backstage.io/kubernetes-id: dssp-targetp-7
+        environment: prod
+    spec:
+      containers:
+        - name: dssp-targetp-7
+          image: chaitanyapandeygspann/dssp-targetp-7:1.0.1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "prod"
