@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonar-test-3
+  labels:
+    backstage.io/kubernetes-id: sonar-test-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonar-test-3
+  template:
+    metadata:
+      labels:
+        app: sonar-test-3
+        backstage.io/kubernetes-id: sonar-test-3
+    spec:
+      containers:
+        - name: sonar-test-3
+          image: chaitanyapandeygspann/sonar-test-3:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
