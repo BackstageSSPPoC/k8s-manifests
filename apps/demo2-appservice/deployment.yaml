@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo2-appservice
+  labels:
+    backstage.io/kubernetes-id: demo2-appservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo2-appservice
+  template:
+    metadata:
+      labels:
+        app: demo2-appservice
+        backstage.io/kubernetes-id: demo2-appservice
+    spec:
+      containers:
+        - name: demo2-appservice
+          image: chaitanyapandeygspann/demo2-appservice:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
