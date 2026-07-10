@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: may-01-test
+  labels:
+    backstage.io/kubernetes-id: may-01-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: may-01-test
+  template:
+    metadata:
+      labels:
+        app: may-01-test
+        backstage.io/kubernetes-id: may-01-test
+    spec:
+      containers:
+        - name: may-01-test
+          image: chaitanyapandeygspann/may-01-test:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
