@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-integration-beta
+  labels:
+    backstage.io/kubernetes-id: argo-integration-beta
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo-integration-beta
+  template:
+    metadata:
+      labels:
+        app: argo-integration-beta
+        backstage.io/kubernetes-id: argo-integration-beta
+    spec:
+      containers:
+        - name: argo-integration-beta
+          image: chaitanyapandeygspann/argo-integration-beta:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000

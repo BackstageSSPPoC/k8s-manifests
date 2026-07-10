@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: argo-integration-beta
+spec:
+  selector:
+    app: argo-integration-beta
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: argo-integration-beta-ingress
+# spec:
+#   ingressClassName: gce
+#   rules:
+#   - host: argo-integration-beta.example.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: argo-integration-beta
+#             port:
+#               number: 80
