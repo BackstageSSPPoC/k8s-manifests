@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-march-12
+  labels:
+    backstage.io/kubernetes-id: demo-march-12
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-march-12
+  template:
+    metadata:
+      labels:
+        app: demo-march-12
+        backstage.io/kubernetes-id: demo-march-12
+    spec:
+      containers:
+        - name: demo-march-12
+          image: ${DOCKER_IMAGE}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
