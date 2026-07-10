@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jsp-testing-15-05
+  namespace: qa
+  labels:
+    app: jsp-testing-15-05
+    backstage.io/kubernetes-id: jsp-testing-15-05
+    environment: qa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jsp-testing-15-05
+  template:
+    metadata:
+      labels:
+        app: jsp-testing-15-05
+        backstage.io/kubernetes-id: jsp-testing-15-05
+        environment: qa
+    spec:
+      containers:
+        - name: jsp-testing-15-05
+          image: chaitanyapandeygspann/jsp-testing-15-05:1.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "qa"
