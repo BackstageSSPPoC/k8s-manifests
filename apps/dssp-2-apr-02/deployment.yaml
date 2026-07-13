@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-2-apr-02
+  labels:
+    backstage.io/kubernetes-id: dssp-2-apr-02
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-2-apr-02
+  template:
+    metadata:
+      labels:
+        app: dssp-2-apr-02
+        backstage.io/kubernetes-id: dssp-2-apr-02
+    spec:
+      containers:
+        - name: dssp-2-apr-02
+          image: chaitanyapandeygspann/dssp-2-apr-02:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
