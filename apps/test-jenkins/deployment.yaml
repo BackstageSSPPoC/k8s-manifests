@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-jenkins
+  labels:
+    backstage.io/kubernetes-id: test-jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-jenkins
+  template:
+    metadata:
+      labels:
+        app: test-jenkins
+        backstage.io/kubernetes-id: test-jenkins
+    spec:
+      containers:
+        - name: test-jenkins
+          image: chaitanyapandeygspann/test-jenkins:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
