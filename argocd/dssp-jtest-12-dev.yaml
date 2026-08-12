@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: apps/dssp-jtest-12/dev
   destination:
-    name: dssp
+    name: in-cluster
     namespace: dev
   syncPolicy:
     automated:
