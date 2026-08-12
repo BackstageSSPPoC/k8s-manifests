@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-71
-          image: chaitanyapandeygspann/dssp-targetp-71:1.0.3
+          image: chaitanyapandeygspann/dssp-targetp-71:1.0.4
           ports:
             - containerPort: 5000
           env:
@@ -33,4 +33,4 @@ spec:
               cpu: "50m"
             limits:
               memory: "128Mi"
-              cpu: "100m";
+              cpu: "100m"
