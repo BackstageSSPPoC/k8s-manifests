@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: apps/dssp-targetp-71/dev
   destination:
-    name: https://kubernetes.default.svc
+    server: https://kubernetes.default.svc
     namespace: dev
   syncPolicy:
     automated:
