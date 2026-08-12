@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dssp-targetp-70-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+    targetRevision: main
+    path: apps/dssp-targetp-70/dev
+  destination:
+    name: backstage-poc-standard
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
