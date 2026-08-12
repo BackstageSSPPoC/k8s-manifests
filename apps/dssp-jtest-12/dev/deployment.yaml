@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-jtest-12
+  namespace: dev
+  labels:
+    app: dssp-jtest-12
+    backstage.io/kubernetes-id: dssp-jtest-12
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-jtest-12
+  template:
+    metadata:
+      labels:
+        app: dssp-jtest-12
+        backstage.io/kubernetes-id: dssp-jtest-12
+        environment: dev
+    spec:
+      containers:
+        - name: dssp-jtest-12
+          image: chaitanyapandeygspann/dssp-jtest-12:1.0.3
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "100m";
