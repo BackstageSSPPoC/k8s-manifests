@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-jtest-12
-          image: chaitanyapandeygspann/dssp-jtest-12:1.0.9
+          image: chaitanyapandeygspann/dssp-jtest-12:1.0.3
           ports:
             - containerPort: 8080
           env:
@@ -33,4 +33,4 @@ spec:
               cpu: "50m"
             limits:
               memory: "128Mi"
-              cpu: "100m";
+              cpu: "100m"

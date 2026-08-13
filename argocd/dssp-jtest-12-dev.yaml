@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: apps/dssp-jtest-12/dev
   destination:
-    name: in-cluster
+    server: https://kubernetes.default.svc
     namespace: dev
   syncPolicy:
     automated:
