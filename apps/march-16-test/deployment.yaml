@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: march-16-test
+  labels:
+    backstage.io/kubernetes-id: march-16-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: march-16-test
+  template:
+    metadata:
+      labels:
+        app: march-16-test
+        backstage.io/kubernetes-id: march-16-test
+    spec:
+      containers:
+        - name: march-16-test
+          image: chaitanyapandeygspann/march-16-test:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
