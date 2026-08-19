@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: jay-ssp-1
-          image: chaitanyapandeygspann/jay-ssp-1:1.0.1
+          image: chaitanyapandeygspann/jay-ssp-1:1.0.2
           ports:
             - containerPort: 8080
           env:
