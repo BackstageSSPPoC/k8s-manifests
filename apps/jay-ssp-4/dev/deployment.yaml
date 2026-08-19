@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jay-ssp-4
+  namespace: dev
+  labels:
+    app: jay-ssp-4
+    backstage.io/kubernetes-id: jay-ssp-4
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jay-ssp-4
+  template:
+    metadata:
+      labels:
+        app: jay-ssp-4
+        backstage.io/kubernetes-id: jay-ssp-4
+        environment: dev
+    spec:
+      containers:
+        - name: jay-ssp-4
+          image: chaitanyapandeygspann/jay-ssp-4:1.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
