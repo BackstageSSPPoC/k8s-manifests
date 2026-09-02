@@ -21,12 +21,14 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-81
-          image: chaitanyapandeygspann/dssp-targetp-81:1.0.4
+          image: chaitanyapandeygspann/dssp-targetp-81:1.0.5
           ports:
             - containerPort: 5000
           env:
             - name: APP_ENV
               value: "dev"
+            - name: URL_PREFIX
+              value: /dssp-targetp-81-dev
           resources:
             requests:
               memory: "384Mi"
