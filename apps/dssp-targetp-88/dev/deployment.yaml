@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-88
-          image: chaitanyapandeygspann/dssp-targetp-88:1.0.3
+          image: ${DOCKER_IE}
           ports:
             - containerPort: 5000
           env:
