@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-python-project
-          image: ${DOCKER_IGE}
+          image: chaitanyapandeygspann/dssp-python-project:1.0.5
           ports:
             - containerPort: 5000
           env:
