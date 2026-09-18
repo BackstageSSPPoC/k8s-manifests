@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-89
-          image: chaitanyapandeygspann/dssp-targetp-89:1.0.1
+          image: chaitanyapandeygspann/dssp-targetp-89:1.0.2
           ports:
             - containerPort: 5000
           env:
