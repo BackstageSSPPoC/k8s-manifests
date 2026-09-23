@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-springboot-demo
+  namespace: dev
+  labels:
+    app: dssp-springboot-demo
+    backstage.io/kubernetes-id: dssp-springboot-demo
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-springboot-demo
+  template:
+    metadata:
+      labels:
+        app: dssp-springboot-demo
+        backstage.io/kubernetes-id: dssp-springboot-demo
+        environment: dev
+    spec:
+      containers:
+        - name: dssp-springboot-demo
+          image: chaitanyapandeygspann/dssp-springboot-demo:1.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /dssp-springboot-demo-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
