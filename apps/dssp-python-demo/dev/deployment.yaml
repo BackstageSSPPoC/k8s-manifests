@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-python-demo
-          image: chaitanyapandeygspann/dssp-python-demo:1.0.1
+          image: chaitanyapandeygspann/dssp-python-demo:1.0.3
           ports:
             - containerPort: 5000
           env:
