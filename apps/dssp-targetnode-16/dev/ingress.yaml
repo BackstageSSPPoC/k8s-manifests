@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dssp-targetnode-16
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: dssp-targetnode-16
+    environment: dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /dssp-targetnode-16-dev
+            pathType: Prefix
+            backend:
+              service:
+                name: dssp-targetnode-16
+                port:
+                  number: 80
