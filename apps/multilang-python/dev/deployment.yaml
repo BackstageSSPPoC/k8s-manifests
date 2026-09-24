@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multilang-python
+  namespace: dev
+  labels:
+    app: multilang-python
+    backstage.io/kubernetes-id: multilang-python
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multilang-python
+  template:
+    metadata:
+      labels:
+        app: multilang-python
+        backstage.io/kubernetes-id: multilang-python
+        environment: dev
+    spec:
+      containers:
+        - name: multilang-python
+          image: chaitanyapandeygspann/multilang-python:1.0.1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /multilang-python-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
