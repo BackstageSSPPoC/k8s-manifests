@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetnode-20
-          image: chaitanyapandeygspann/multilang-nodejs:1.0.8
+          image: chaitanyapandeygspann/dssp-targetnode-20:1.0.9
           ports:
             - containerPort: 3000
           env:
