@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multilang-nodejs
+  namespace: dev
+  labels:
+    app: multilang-nodejs
+    backstage.io/kubernetes-id: multilang-nodejs
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multilang-nodejs
+  template:
+    metadata:
+      labels:
+        app: multilang-nodejs
+        backstage.io/kubernetes-id: multilang-nodejs
+        environment: dev
+    spec:
+      containers:
+        - name: multilang-nodejs
+          image: chaitanyapandeygspann/multilang-nodejs:1.0.7
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /multilang-nodejs-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
