@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-nodejs-demo
-          image: chaitanyapandeygspann/dssp-nodejs-demo:1.0.1
+          image: chaitanyapandeygspann/dssp-nodejs-demo:1.0.2
           ports:
             - containerPort: 3000
           env:
