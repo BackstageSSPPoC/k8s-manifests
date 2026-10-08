@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-spring-package-lab-3
-          image: chaitanyapandeygspann/dssp-spring-package-lab-3:1.0.1
+          image: chaitanyapandeygspann/dssp-spring-package-lab-3:1.0.3
           ports:
             - containerPort: 8080
           env:
