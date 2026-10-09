@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dssp-nodejs-github-actions-08oct
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: dssp-nodejs-github-actions-08oct
+spec:
+  selector:
+    app: dssp-nodejs-github-actions-08oct
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP

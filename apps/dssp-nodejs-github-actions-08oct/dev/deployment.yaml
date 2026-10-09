@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-nodejs-github-actions-08oct
+  namespace: dev
+  labels:
+    app: dssp-nodejs-github-actions-08oct
+    backstage.io/kubernetes-id: dssp-nodejs-github-actions-08oct
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-nodejs-github-actions-08oct
+  template:
+    metadata:
+      labels:
+        app: dssp-nodejs-github-actions-08oct
+        backstage.io/kubernetes-id: dssp-nodejs-github-actions-08oct
+        environment: dev
+    spec:
+      containers:
+        - name: dssp-nodejs-github-actions-08oct
+          image: chaitanyapandeygspann/dssp-nodejs-github-actions-08oct:1.0.1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /dssp-nodejs-github-actions-08oct-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
