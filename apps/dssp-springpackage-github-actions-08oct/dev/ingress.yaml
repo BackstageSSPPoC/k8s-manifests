@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dssp-springpackage-github-actions-08oct
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: dssp-springpackage-github-actions-08oct
+    environment: dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /dssp-springpackage-github-actions-08oct-dev
+            pathType: Prefix
+            backend:
+              service:
+                name: dssp-springpackage-github-actions-08oct
+                port:
+                  number: 80

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-springpackage-github-actions-08oct
+  namespace: dev
+  labels:
+    app: dssp-springpackage-github-actions-08oct
+    backstage.io/kubernetes-id: dssp-springpackage-github-actions-08oct
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-springpackage-github-actions-08oct
+  template:
+    metadata:
+      labels:
+        app: dssp-springpackage-github-actions-08oct
+        backstage.io/kubernetes-id: dssp-springpackage-github-actions-08oct
+        environment: dev
+    spec:
+      containers:
+        - name: dssp-springpackage-github-actions-08oct
+          image: chaitanyapandeygspann/dssp-springpackage-github-actions-08oct:1.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /dssp-springpackage-github-actions-08oct-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"

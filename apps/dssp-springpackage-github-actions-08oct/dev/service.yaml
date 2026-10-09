@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dssp-springpackage-github-actions-08oct
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: dssp-springpackage-github-actions-08oct
+spec:
+  selector:
+    app: dssp-springpackage-github-actions-08oct
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
