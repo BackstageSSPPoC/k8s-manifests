@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-spring-package-git-lab-08-oct
-          image: chaitanyapandeygspann/dssp-spring-package-git-lab-08-oct:1.0.1
+          image: chaitanyapandeygspann/dssp-spring-package-git-lab-08-oct:1.0.3
           ports:
             - containerPort: 8080
           env:
