@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dssp-python-12oct
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: dssp-python-12oct
+spec:
+  selector:
+    app: dssp-python-12oct
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
