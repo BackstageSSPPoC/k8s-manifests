@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-nodejs-12oct
+  namespace: dev
+  labels:
+    app: dssp-nodejs-12oct
+    backstage.io/kubernetes-id: dssp-nodejs-12oct
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-nodejs-12oct
+  template:
+    metadata:
+      labels:
+        app: dssp-nodejs-12oct
+        backstage.io/kubernetes-id: dssp-nodejs-12oct
+        environment: dev
+    spec:
+      containers:
+        - name: dssp-nodejs-12oct
+          image: chaitanyapandeygspann/dssp-nodejs-12oct:1.0.1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /dssp-nodejs-12oct-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
