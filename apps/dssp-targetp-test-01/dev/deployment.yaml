@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetp-test-01
-          image: chaitanyapandeygspann/dssp-targetp-test-01:1.0.1
+          image: chaitanyapandeygspann/dssp-targetp-test-01:1.0.3
           ports:
             - containerPort: 5000
           env:
