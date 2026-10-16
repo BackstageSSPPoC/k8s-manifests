@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-targetnode-test-01
-          image: ${DOCKER_IME}
+          image: chaitanyapandeygspann/dssp-targetnode-test-01:1.0.5
           ports:
             - containerPort: 3000
           env:
