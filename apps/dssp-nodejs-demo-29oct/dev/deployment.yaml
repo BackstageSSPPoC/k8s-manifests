@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-nodejs-demo-29oct
-          image: ${DOCKER_IE}
+          image: chaitanyapandeygspann/dssp-nodejs-demo-29oct:1.0.5
           ports:
             - containerPort: 3000
           env:
