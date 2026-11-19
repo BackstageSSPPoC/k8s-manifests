@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dssp-spring-package-19-nov
+  namespace: uat
+  labels:
+    backstage.io/kubernetes-id: dssp-spring-package-19-nov
+    environment: uat
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /dssp-spring-package-19-nov-uat
+            pathType: Prefix
+            backend:
+              service:
+                name: dssp-spring-package-19-nov
+                port:
+                  number: 80
