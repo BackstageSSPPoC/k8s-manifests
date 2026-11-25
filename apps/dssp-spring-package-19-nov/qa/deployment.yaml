@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: dssp-spring-package-19-nov
-          image: chaitanyapandeygspann/dssp-spring-package-19-nov:1.0.2
+          image: chaitanyapandeygspann/dssp-spring-package-19-nov:1.0.6
           ports:
             - containerPort: 8080
           env:
