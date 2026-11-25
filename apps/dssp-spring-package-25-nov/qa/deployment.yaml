@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dssp-spring-package-25-nov
+  namespace: qa
+  labels:
+    app: dssp-spring-package-25-nov
+    backstage.io/kubernetes-id: dssp-spring-package-25-nov
+    environment: qa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dssp-spring-package-25-nov
+  template:
+    metadata:
+      labels:
+        app: dssp-spring-package-25-nov
+        backstage.io/kubernetes-id: dssp-spring-package-25-nov
+        environment: qa
+    spec:
+      containers:
+        - name: dssp-spring-package-25-nov
+          image: chaitanyapandeygspann/dssp-spring-package-25-nov:1.0.2
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "qa"
+            - name: URL_PREFIX
+              value: /dssp-spring-package-25-nov-qa
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
